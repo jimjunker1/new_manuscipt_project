@@ -28,14 +28,17 @@ institute:
   - veidi: Institute of Marine and Freshwater Fisheries, Reykjavik, Iceland
   - reyk: Univeristy of Iceland, Institute of Life and Environmental Sciences, Reykjavik, Iceland
 output:
+   pdf_document:
+     keep_tex: true
+     pandoc_args:
+       - '--lua-filter=scholarly-metadata.lua'
+       - '--lua-filter=author-info-blocks.lua'
    word_document:
       reference_docx: working_docx_template.docx
       toc: no
       pandoc_args:
       - '--lua-filter=scholarly-metadata.lua'
       - '--lua-filter=author-info-blocks.lua'
-   pdf_document:
-     keep_tex: true
    html_document: default
    pandoc_args:
       - '--lua-filter=scholarly-metadata.lua'
